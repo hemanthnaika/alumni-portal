@@ -1,0 +1,57 @@
+.user-dashboard {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.dashboard-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.dashboard-card {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.user-profile {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.event-section {
+  margin-top: 2rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.event-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.event-item {
+  margin-bottom: 1rem;
+  background: #fff;
+  border-left: 4px solid #2196f3;
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

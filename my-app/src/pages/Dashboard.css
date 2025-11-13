@@ -1,0 +1,147 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f8f9fb, #eef3f9);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* 🔹 Grid for Admin Cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #ffffff, #f0f6ff);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 51, 102, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  animation: slideUp 0.6s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 80, 160, 0.25);
+  background: linear-gradient(135deg, #e6f0ff, #ffffff);
+}
+
+.dashboard-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 0.6rem;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* 🔹 Event Participation Section */
+.event-card-admin {
+  background: #ffffff;
+  border-left: 6px solid #003366;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.event-card-admin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 80, 160, 0.25);
+}
+
+.event-card-admin h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: #003366;
+}
+
+.event-card-admin p {
+  margin: 0.3rem 0;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* 🔹 Raised Hands List */
+.raised-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 0.8rem;
+}
+
+.raised-item {
+  background: #f8faff;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.6rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.08);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.raised-item:hover {
+  background: #e6f0ff;
+  transform: translateX(6px);
+}
+
+/* 🔹 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1.5rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-card {
+    padding: 1.5rem;
+  }
+
+  .event-card-admin {
+    padding: 1.2rem;
+  }
+}

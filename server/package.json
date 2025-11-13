@@ -1,0 +1,31 @@
+{
+  "name": "alumni-portal-backend",
+  "version": "1.0.0",
+  "description": "Backend server for the Alumni Portal using Express and MongoDB",
+  "main": "Index.js",
+  "scripts": {
+    "start": "node Index.js",
+    "dev": "nodemon Index.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "alumni",
+    "backend",
+    "node"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
