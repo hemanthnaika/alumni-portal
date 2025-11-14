@@ -18,6 +18,7 @@ const AddAlumni = () => {
     company: "",
     designation: "",
     location: "",
+    password: "",
   });
   const [photo, setPhoto] = useState(null);
   const navigate = useNavigate();
@@ -28,10 +29,10 @@ const AddAlumni = () => {
 
   const fetchAlumni = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/api/auth`);
+      const res = await axios.get(`${API_BASE}/api/alumni`);
 
       // Backend returns { users, alumni }
-      const all = [...(res.data.users || []), ...(res.data.alumni || [])];
+      const all = res.data;
 
       setAlumni(all);
     } catch (err) {
@@ -52,7 +53,7 @@ const AddAlumni = () => {
     if (photo) data.append("photo", photo);
 
     try {
-      await axios.post("http://localhost:5000/api/alumni/add", data);
+      await axios.post("http://localhost:5000/api/alumni/register", data);
       alert("✅ Alumni added!");
       fetchAlumni();
       setFormData({
@@ -64,6 +65,7 @@ const AddAlumni = () => {
         company: "",
         designation: "",
         location: "",
+        password: "",
       });
       setPhoto(null);
     } catch (err) {
@@ -129,10 +131,18 @@ const AddAlumni = () => {
             value={formData.designation}
             onChange={handleChange}
           />
+
           <input
             name="location"
             placeholder="Location"
             value={formData.location}
+            onChange={handleChange}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={formData.password}
             onChange={handleChange}
           />
           <input type="file" onChange={handlePhotoChange} />

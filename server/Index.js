@@ -30,17 +30,14 @@ mongoose
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // ✅ Import and mount routes
-const authRoutes = require("./routes/auth");
+
 const alumniRoutes = require("./routes/alumni");
 const adminRoutes = require("./routes/admin");
 const eventRoutes = require("./routes/events");
-const userRoutes = require("./routes/user"); // 👈 Added new user route
 
-app.use("/api/auth", authRoutes);
 app.use("/api/alumni", alumniRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/events", eventRoutes);
-app.use("/api/user", userRoutes); // 👈 Added
 
 // ✅ Default root route
 app.get("/", (req, res) => {
@@ -50,7 +47,9 @@ app.get("/", (req, res) => {
 // ✅ Error handling middleware (optional but recommended)
 app.use((err, req, res, next) => {
   console.error("⚠️ Server Error:", err.stack);
-  res.status(500).json({ message: "Internal Server Error", error: err.message });
+  res
+    .status(500)
+    .json({ message: "Internal Server Error", error: err.message });
 });
 
 // ✅ Start server

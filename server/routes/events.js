@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Event = require("../models/Event");
-const User = require("../models/User"); // Assuming this is your user model
+const Alumni = require("../models/Alumni"); // Assuming this is your user model
 
 // Create event
 router.post("/", async (req, res) => {
@@ -40,7 +40,7 @@ router.post("/:eventId/raise-hand", async (req, res) => {
     const { eventId } = req.params;
 
     if (!userId) {
-      return res.status(400).json({ error: "User ID is required" });
+      return res.status(400).json({ error: "Alumni ID is required" });
     }
 
     const event = await Event.findById(eventId);
@@ -50,7 +50,7 @@ router.post("/:eventId/raise-hand", async (req, res) => {
     if (event.raisedHands.includes(userId)) {
       return res
         .status(400)
-        .json({ error: "User already raised hand for this event" });
+        .json({ error: "Alumni already raised hand for this event" });
     }
 
     event.raisedHands.push(userId);

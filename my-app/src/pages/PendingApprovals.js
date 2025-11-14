@@ -40,7 +40,7 @@ const PendingApprovals = () => {
 
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/delete-user/${id}`);
+      await axios.delete(`http://localhost:5000/api/admin/delete/${id}`);
       setPendingUsers((prev) => prev.filter((user) => user._id !== id));
       alert("🗑️ User deleted successfully!");
     } catch (err) {

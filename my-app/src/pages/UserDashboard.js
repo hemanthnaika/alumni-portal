@@ -50,7 +50,7 @@ const UserDashboard = () => {
   // Fetch user list (alumni)
   const fetchDashboardData = async (userId) => {
     try {
-      const res = await axios.get(`${API_BASE}/api/auth`);
+      const res = await axios.get(`${API_BASE}/api/alumni`);
       setAlumni(res.data || []);
       const currentUser = (res.data || []).find((u) => u._id === userId);
       setUser((prev) => currentUser || prev);
@@ -122,16 +122,16 @@ const UserDashboard = () => {
               <strong>Phone:</strong> {user.phone}
             </p>
             <p>
-              <strong>Batch:</strong> {user.batch}
+              <strong>Batch:</strong> {user.year}
             </p>
             <p>
-              <strong>Branch:</strong> {user.branch}
+              <strong>Branch:</strong> {user.course}
             </p>
             <p>
               <strong>Company:</strong> {user.company}
             </p>
             <p>
-              <strong>Position:</strong> {user.position}
+              <strong>Position:</strong> {user.designation}
             </p>
             <p>
               <strong>Location:</strong> {user.location}
@@ -139,7 +139,7 @@ const UserDashboard = () => {
           </div>
         )}
 
-        <div className="all-alumni-section" >
+        <div className="all-alumni-section">
           <h3>All Registered Alumni</h3>
           <div className="alumni-grid">
             {alumni.map((alum) => (
@@ -155,10 +155,10 @@ const UserDashboard = () => {
                   <strong>Name:</strong> {alum.name}
                 </p>
                 <p>
-                  <strong>Branch:</strong> {alum.branch}
+                  <strong>Branch:</strong> {alum.course}
                 </p>
                 <p>
-                  <strong>Batch:</strong> {alum.batch}
+                  <strong>Batch:</strong> {alum.year}
                 </p>
               </div>
             ))}

@@ -21,7 +21,7 @@ const AlumniPage = () => {
     try {
       const [adminRes, approvedRes] = await Promise.all([
         axios.get("http://localhost:5000/api/alumni"),
-        axios.get("http://localhost:5000/api/auth/approved"),
+        axios.get("http://localhost:5000/api/alumni/approved"),
       ]);
 
       const combined = [...adminRes.data, ...approvedRes.data];
@@ -43,10 +43,9 @@ const AlumniPage = () => {
 
   // ✅ Delete own profile
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete your profile?"))
-      return;
+    if (!window.confirm("Are you sure you want to delete ?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/user/${id}`);
+      await axios.delete(`http://localhost:5000/api/alumni/${id}`);
       alert("Profile deleted successfully!");
       localStorage.removeItem("user");
       navigate("/");

@@ -20,6 +20,7 @@ const UpdateAlumni = () => {
     company: "",
     designation: "",
     location: "",
+    password: "",
   });
 
   const [photo, setPhoto] = useState(null);
@@ -30,9 +31,8 @@ const UpdateAlumni = () => {
   }, []);
 
   const fetchAlumni = async () => {
-
     try {
-      const res = await axios.get(`${API_BASE}/api/alumni/${id}`);
+      const res = await axios.get(`${API_BASE}/api/alumni/single/${id}`);
       const data = res.data;
 
       setFormData({
@@ -157,7 +157,12 @@ const UpdateAlumni = () => {
           )}
 
           <input type="file" onChange={handlePhotoChange} />
-
+          <input
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+          />
           <button type="submit">Update Profile</button>
         </form>
       </div>
